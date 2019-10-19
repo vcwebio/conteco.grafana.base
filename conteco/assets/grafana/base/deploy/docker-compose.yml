@@ -1,0 +1,26 @@
+---
+version: '3'
+services:
+
+  service:
+##### BEGIN ${CONTECO_TYPE}.${CONTECO_NAME}/docker-compose/service #####
+    image: ${CONTECO_REGISTRY}${CONTECO_REALM}/${CONTECO_ECOSYSTEM}.${CONTECO_TYPE}.${CONTECO_NAME}:${CONTECO_TAG}
+    environment:
+      GF_LOG_FORMAT: json
+      GF_LOG_FILE_FORMAT: json
+      GF_LOG_CONSOLE_FORMAT: json
+      GF_LOG_SYSLOG_FORMAT: json
+      GF_LOG_LEVEL: warn
+##### BEGIN ${CONTECO_TYPE}.${CONTECO_NAME}/docker-compose/service #####
+    ports:
+      - 3000:3000
+    environment:
+      GF_SERVER_ROOT_URL: /${INFOMETIS_MODULENAME}/grafana/
+    deploy:
+      mode: replicated
+    networks:
+      - ${CONTECO_ECOSYSTEM}_overlay
+
+networks:
+  ${CONTECO_ECOSYSTEM}_overlay:
+    external: true

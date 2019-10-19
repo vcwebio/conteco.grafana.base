@@ -16,7 +16,7 @@ COPY ./ /conteco/repo/
 
 ##### BEGIN image/Dockerfile/build-instructions #####
 ENV CONTECO_ENTRYPOINT "/run.sh"
-COPY ./conteco/assets/${INFOMETIS_CONTAINERTYPE}/${INFOMETIS_CONTAINERNAME}/etc/grafana/grafana.ini /etc/grafana/grafana.ini
+COPY ./conteco/assets/${CONTECO_TYPE}/${CONTECO_NAME}/etc/grafana/grafana.ini /etc/grafana/grafana.ini
 ##### END image/Dockerfile/build-instructions #####
 
 ##### BEGIN image.base/Dockerfile/env-labels-footer #####
