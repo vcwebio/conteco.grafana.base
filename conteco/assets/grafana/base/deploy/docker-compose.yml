@@ -6,13 +6,12 @@ services:
   grafana:
     image: ${CONTECO_REGISTRY}${CONTECO_REALM}/${CONTECO_ECOSYSTEM}.grafana.base:6.3.5
     environment: ['GF_LOG_FORMAT=json', 'GF_LOG_FILE_FORMAT=json', 'GF_LOG_CONSOLE_FORMAT=json', 'GF_LOG_SYSLOG_FORMAT=json', 'GF_LOG_LEVEL=warn', 'GF_SERVER_ROOT_URL=${CONTECO_DC_GRAFANA_ENV_GF_SERVER_ROOT_URL}'] 
-    command: [${CONTECO_DC_GRAFANA_COMMAND}]
-    volumes: [${CONTECO_DC_GRAFANA_VOLUMES}]
+    command: []
+    volumes: ['${CONTECO_DC_GRAFANA_VOLUME_NAME}:/var/lib/grafana']
     ports: [${CONTECO_DC_GRAFANA_PORTS}]
     networks: [${CONTECO_DC_GRAFANA_NETWORKS}]
     deploy: {${CONTECO_DC_GRAFANA_DEPLOY}}
 # END SERVICE grafana.base
 
-networks:
-  ${CONTECO_DC_GRAFANA_NETWORKS}:
-    external: true
+volumes: {${CONTECO_DC_GLOBAL_VOLUMES}}
+networks: {${CONTECO_DC_GLOBAL_NETWORKS}}
