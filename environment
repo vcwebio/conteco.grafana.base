@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-export CONTECO_LABEL="Conteco grafana base"
-export CONTECO_DESCRIPTION="The ContEco Grafana base image."
+export CONTECO_LABEL="grafana.base - ContEco"
+export CONTECO_DESCRIPTION="Grafana Base image, with minor configuration change."
 
 export CONTECO_TYPE="grafana"
 export CONTECO_NAME="base"
