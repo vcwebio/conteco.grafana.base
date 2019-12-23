@@ -35,7 +35,7 @@ LABEL io.vcweb.schema-version="1.0" \
       io.vcweb.tag="6.3.5" \
       io.vcweb.base="external.grafana:6.3.5" \
       io.vcweb.build="image-base" \
-      io.vcweb.label="Conteco grafana base" \
-      io.vcweb.description="The ContEco Grafana base image." \
+      io.vcweb.label="grafana.base - ContEco" \
+      io.vcweb.description="Grafana Base image, with minor configuration change." \
       io.vcweb.docker.cmd.help="docker run vcwebio/conteco.grafana.base --help" 
 ##### END image.base/Dockerfile/env-labels-footer #####
