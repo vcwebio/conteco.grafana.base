@@ -7,7 +7,7 @@ services:
     image: ${CONTECO_REGISTRY}${CONTECO_REALM}/${CONTECO_ECOSYSTEM}.grafana.base:6.3.5
     environment: ['GF_LOG_FORMAT=json', 'GF_LOG_FILE_FORMAT=json', 'GF_LOG_CONSOLE_FORMAT=json', 'GF_LOG_SYSLOG_FORMAT=json', 'GF_LOG_LEVEL=warn', GF_SERVER_ROOT_URL=/${CONTECO_TYPE}/grafana]
     command: []
-    volumes: ['${CONTECO_TYPE}_grafana_volume:/var/lib/grafana']
+    volumes: [${CONTECO_DC_GRAFANA_VOLUMES}]
     ports: []
     networks: [${CONTECO_TYPE}_overlay]
     deploy:
@@ -19,8 +19,8 @@ services:
         reservations:
           cpus: '${CONTECO_DC_GRAFANA_DEPLOY_RESOURCES_RESERVATIONS_CPUS}'
           memory: '${CONTECO_DC_GRAFANA_DEPLOY_RESOURCES_RESERVATIONS_MEMORY}'
-      labels: []
+      labels: [${CONTECO_DC_GRAFANA_DEPLOY_LABELS}]
 # END SERVICE grafana.base
 
-volumes: {${CONTECO_TYPE}_grafana_volume: { external: true }}
+volumes: {${CONTECO_DC_GLOBAL_VOLUMES}}
 networks: {${CONTECO_TYPE}_overlay: { external: true }}
