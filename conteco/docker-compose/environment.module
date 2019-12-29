@@ -10,7 +10,7 @@ export CONTECO_DC_GLOBAL_VOLUME_LIST='grafana_volume'
 # END OTHER VARIABLES
 
 # START VOLUMES VARIABLES
-export CONTECO_DC_GRAFANA_VOLUMES="'${DOLLAR}{CONTECO_TYPE}_grafana_volume:/var/lib/grafana'"
+export CONTECO_DC_GRAFANA_VOLUMES="'${CONTECO_TYPE}_grafana_volume:/var/lib/grafana'"
 export CONTECO_DC_GLOBAL_VOLUMES=""
 # END VOLUMES VARIABLES
 
