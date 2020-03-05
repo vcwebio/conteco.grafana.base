@@ -4,12 +4,12 @@ services:
 
 # START SERVICE grafana.base
   grafana:
-    image: ${CONTECO_REGISTRY}${CONTECO_REALM_RUNTIME}/conteco.grafana.base:6.3.5
+    image: ${CONTECO_REGISTRY}${CONTECO_REALM}/${CONTECO_ECOSYSTEM}.grafana.base:6.3.5
     environment: ['GF_LOG_FORMAT=json', 'GF_LOG_FILE_FORMAT=json', 'GF_LOG_CONSOLE_FORMAT=json', 'GF_LOG_SYSLOG_FORMAT=json', 'GF_LOG_LEVEL=warn', GF_SERVER_ROOT_URL=/${CONTECO_TYPE}/grafana]
     command: []
-    volumes: ['${CONTECO_TYPE}_conteco_dc_grafana_volume:/var/lib/grafana']
+    volumes: ['${CONTECO_STACKPREFIX}_grafana_volume:/var/lib/grafana']
     ports: []
-    networks: [${CONTECO_TYPE}_overlay]
+    networks: [${CONTECO_NETWORKLOCAL}_overlay]
     deploy:
       mode: replicated
       resources:
@@ -22,5 +22,5 @@ services:
       labels: [${CONTECO_DC_GRAFANA_DEPLOY_LABELS}]
 # END SERVICE grafana.base
 
-volumes: {${CONTECO_TYPE}_conteco_dc_grafana_volume: { external: true }}
-networks: {${CONTECO_TYPE}_overlay: { external: true }}
+volumes: {${CONTECO_STACKPREFIX}_grafana_volume: { external: true }}
+networks: {${CONTECO_NETWORKLOCAL}_overlay: { external: true }}
