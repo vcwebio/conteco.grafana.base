@@ -5,7 +5,7 @@ export CONTECO_DESCRIPTION="Grafana Base image, with minor configuration change.
 
 export CONTECO_TYPE="grafana"
 export CONTECO_NAME="base"
-export CONTECO_TAG="6.3.5"
+export CONTECO_TAG="7.0.5"
 
-export CONTECO_BASE="external.grafana:6.3.5"
+export CONTECO_BASE="external.grafana:7.0.5"
 export CONTECO_BUILD="image-base"
