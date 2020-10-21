@@ -7,5 +7,6 @@ export CONTECO_TYPE="grafana"
 export CONTECO_NAME="base"
 export CONTECO_TAG="7.2.1"
 
-export CONTECO_BASE="external.grafana:7.2.1"
 export CONTECO_BUILD="image-base"
+
+export CONTECO_EXTERNAL_IMAGE_NAME="grafana/grafana:7.2.1"
